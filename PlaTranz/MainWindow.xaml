@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PlaTranz"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="PlaTranz" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
+        Title="PlaTranz" Height="600" Width="1000" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Foreground="White" WindowStyle="None" AllowsTransparency="True" Icon="Resources/shipped.png">
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -30,11 +30,11 @@
             <BeginStoryboard Storyboard="{StaticResource  MenuClose}"/>
         </EventTrigger>
     </Window.Triggers>
-    
-    
+
+
     <Grid>
- <!--MessageBox Zamykania-->
-        <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}"> 
+        <!--MessageBox Zamykania-->
+        <materialDesign:DialogHost BorderBrush="{DynamicResource MaterialDesignDivider}">
             <materialDesign:DialogHost.DialogContent>
                 <Grid Width="300" Height="150" HorizontalAlignment="Center">
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="15">
@@ -44,7 +44,8 @@
                         </TextBlock>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
-                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Click="CloseAppButton"><!--Metoda zamknięcia aplikacji-->
+                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Click="CloseAppButton">
+                            <!--Metoda zamknięcia aplikacji-->
                             Tak
                         </Button>
                         <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center">
@@ -54,12 +55,15 @@
                 </Grid>
             </materialDesign:DialogHost.DialogContent>
             <Grid >
+                <Grid.Background>
+                    <ImageBrush ImageSource="Resources/background.jpg"/>
+                </Grid.Background>
 
 
                 <Grid Height="60" VerticalAlignment="Top" Background="#FF1368BD">
                     <TextBlock Text="PlaTranz" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
                     <StackPanel VerticalAlignment="Center"  Orientation="Horizontal" HorizontalAlignment="Right">
- <!--poUpBox Ustawienia (Konto,Ustawienia,Pomoc)-->
+                        <!--poUpBox Ustawienia (Konto,Ustawienia,Pomoc)-->
                         <materialDesign:PopupBox Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
                             <StackPanel Width="150">
                                 <Button Content="Konto"/>
@@ -80,7 +84,7 @@
                                 <materialDesign:PackIcon Foreground="#FF1B3861" Kind="ViewHeadline" Width="30" Height="30" />
                             </Button>
                         </Grid>
- <!--Lista wyboru menu-->
+                        <!--Lista wyboru menu-->
                         <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White">
                             <ListViewItem Height="60">
                                 <StackPanel Orientation="Horizontal">
@@ -111,7 +115,7 @@
                     <StackPanel VerticalAlignment="Bottom">
                         <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
                             <Separator Foreground="LightGray"/>
- <!--popUpBox Zamyanie, Wylogowywanie-->
+                            <!--popUpBox Zamyanie, Wylogowywanie-->
                             <materialDesign:PopupBox StaysOpen="False" PlacementMode="TopAndAlignLeftEdges">
                                 <materialDesign:PopupBox.ToggleContent >
                                     <materialDesign:PackIcon Kind="PowerSettingsNew" Margin="5" Foreground="#cc3300" Height="30" Width="30" />
