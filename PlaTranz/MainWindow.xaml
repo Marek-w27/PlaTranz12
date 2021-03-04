@@ -21,6 +21,9 @@
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/background.png"/>
+    </Window.Background>
 
     <Window.Triggers>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="OpenMenuButton">
@@ -56,7 +59,7 @@
             </materialDesign:DialogHost.DialogContent>
             <Grid >
                 <Grid.Background>
-                    <ImageBrush ImageSource="Resources/background.jpg"/>
+                    <ImageBrush ImageSource="Resources/background.png"/>
                 </Grid.Background>
 
 
