@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PlaTranz"
         mc:Ignorable="d"
-        Title="Login" Height="600" Width="1000" WindowStyle="None">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Login" Height="450" Width="280" WindowStyle="None" ResizeMode="NoResize" Icon="Resources/shipped.png" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/background.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Rectangle Height="245" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF2281D1"/>
+                    <GradientStop Color="#FF34268A" Offset="1"/>
+                    <GradientStop Color="#FF33288B" Offset="0.5"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Source="Resources\login.png" VerticalAlignment="Top" Margin="102,30,102,0" Height="49"/>
+        <Rectangle Height="200" Fill="White" VerticalAlignment="Bottom" Margin="22,0,22,109" RadiusY="10" RadiusX="10">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFBBBBBB" Direction="0" BlurRadius="15" RenderingBias="Quality" ShadowDepth="1"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Grid Height="268" VerticalAlignment="Bottom" Margin="35,0,47,152">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="LOGOWANIE" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="70,80,12,0" Foreground="Gray" FontSize="12"/>
+            <StackPanel VerticalAlignment="Center" Margin="1,145,1,10" Height="113" Grid.ColumnSpan="2" >
+                <TextBox  materialDesign:HintAssist.Hint="LOGIN" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10,10,0,10" FontSize="10" Height="34"/>
+                <PasswordBox  materialDesign:HintAssist.Hint="HASŁO" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="10,10,0,10" FontSize="10" Height="34"/>
+            </StackPanel>
+        </Grid>
+        <Button VerticalAlignment="Bottom" Margin="87,0,87,98" Content="ZALOGUJ" Height="30" FontSize="10"/>
+        <Button VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="5,0,0,10" Height="45" Width="52" Background="{x:Null}" BorderBrush="{x:Null}" Click="CloseButton">
+            <materialDesign:PackIcon Kind="PowerSettingsNew" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#cc3300" Height="22" Width="22" />
+        </Button>
     </Grid>
 </Window>

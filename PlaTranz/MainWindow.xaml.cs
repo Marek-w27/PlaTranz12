@@ -13,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PlaTranz.NotificationModel;
+using MaterialDesignThemes.Wpf;
+
 
 namespace PlaTranz
 {
@@ -41,6 +44,29 @@ namespace PlaTranz
         {
             OpenMenuButton.Visibility = Visibility.Visible;
             CloseMenuButton.Visibility = Visibility.Collapsed;
+        }
+
+        private async void LogOutButton(object sender, RoutedEventArgs e)
+        {
+            LogNotificationMessage msg = new LogNotificationMessage();
+            msg.Message = "HelloLogOff";
+            await DialogHost.Show(msg, "RootDialog");
+        }
+
+        private async void CloseButton(object sender, RoutedEventArgs e)
+        {
+            CloseNotificationMessage msg = new CloseNotificationMessage();
+            msg.Message = "Hello Close";
+            await DialogHost.Show(msg, "RootDialog");
+        }
+
+        private void LogOutAppButton(object sender, RoutedEventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+            
+            
         }
     }
 }
