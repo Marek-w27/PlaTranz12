@@ -104,6 +104,10 @@
                         </materialDesign:PopupBox>
                     </StackPanel>
                 </Grid>
+                <Grid Margin="60,55,0,0">
+                    <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+
                 <Grid x:Name="GridMenu" Width="55" HorizontalAlignment="Left" Background="#FF1B3861">
                     <StackPanel>
                         <Grid Background="LightGray" Height="150" >
@@ -114,8 +118,10 @@
                                 <materialDesign:PackIcon Foreground="#FF1B3861" Kind="ViewHeadline" Width="30" Height="30" />
                             </Button>
                         </Grid>
+                        
+                        
                         <!--Lista wyboru menu-->
-                        <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White">
+                        <ListView x:Name="ListViewMenu" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="White" SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="0">
                             <ListViewItem Height="60">
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon  Kind="Assignment" Margin="5"  Width="30" Height="30" VerticalAlignment="Center" Foreground="LightGray"/>

@@ -24,6 +24,8 @@ namespace PlaTranz
     /// </summary>
     public partial class MainWindow : Window
     {
+       
+
         public MainWindow()
         {
             InitializeComponent();
@@ -68,5 +70,29 @@ namespace PlaTranz
             
             
         }
+
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int index = ListViewMenu.SelectedIndex;
+            
+
+            switch (index)
+            {
+                case 0:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new PlanerContent());
+                    break;
+                case 1:
+                    GridPrincipal.Children.Clear();
+                    GridPrincipal.Children.Add(new PrzewoznicyContent());
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+       
     }
-}
+    }
+
